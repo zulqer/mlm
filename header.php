@@ -1,5 +1,10 @@
-<?php session_start(); 
+<?php 
+session_start(); 
+//session_destroy();
 
+/*if(!isset($_SESSION['email'])){
+   			header('location:index.php');
+  		}*/
 ?>
 <body>
 <header>
@@ -13,13 +18,10 @@
         
         
         
-        <?php if($_SESSION['model']!=''){
+        <?php 
 		
-		   $var = $_SESSION['model'];
-		}
-		else{
-		  $var = $_SESSION['user'];
-		}
+		   $var = $_SESSION['email'];
+		
 		?>
         <li><a href="#"><span class="glyphicon glyphicon-user"></span><?php echo $var;?></a></li>
         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
@@ -31,3 +33,4 @@
  </div>
 
 </header>
+</body>

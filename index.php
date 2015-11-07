@@ -1,9 +1,9 @@
 <?php 
 session_start();
-if(isset($_SESSION['user'])){
-   $user = $_SESSION['user'];
+if(isset($_SESSION['email'])){
+   $user = $_SESSION['email'];
 }
-include('classes.php');
+include('common.php');
 $class = new adduser();
 ?>
 

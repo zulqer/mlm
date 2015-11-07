@@ -1,16 +1,12 @@
 <?php
- error_reporting(0);
- include('head.php');
- include('header.php');  
- include('side_nav.php');
+ //error_reporting();
+ include('../includes/admin/head.php');
+ include('../includes/admin/header.php');  
+ include('../includes/admin/side_nav.php');
   //session_start();
- include('../connection.php');
- include('../classes.php'); 
+ include('../common.php');
  $adduser = new adduser();
- if(!isset($_SESSION['admin']))
- {
-    header('location:login.php');
- }  
+   
 	   
 ?>
 <style>

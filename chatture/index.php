@@ -1,15 +1,10 @@
 <?php
   session_start();
-	include('../connection.php');
-	include('../classes.php');
-	 include('head.php');
-     include('header.php'); 
-	 include('side_nav.php'); 
-	$adduser = new adduser();
-	if(!isset($_SESSION['chatture']))
-	{
-    	header('location:login.php');
-	}
+	 include('../common.php');
+	 include('../includes/chatture/head.php');
+     include('../includes/chatture/header.php'); 
+	 include('../includes/chatture/side_nav.php'); 
+	 $adduser = new adduser();
   
   ?>
    

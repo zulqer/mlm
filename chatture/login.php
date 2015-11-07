@@ -1,7 +1,6 @@
 <?php
-   include('../classes.php');
-	session_start();
-	include('../connection.php');
+   session_start();
+   include('../common.php');
 	$class = new adduser();
                 
     if(isset($_POST['login'])){
@@ -62,7 +61,7 @@
 <div class="login">
 
 <form action="" method="post" class="login_form" style="z-index:999999999999999">
-<p><img src="images/logo.png" width="100%" /></p>
+<p><img src="../images/logo.png" width="100%" /></p>
 <p class="admin"> Chatture </p>
 <input type="text" placeholder="Email Id" class="form-control" name="email"/>
 <input type="password" placeholder="Password" class="form-control" name="pass"/>

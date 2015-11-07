@@ -1,15 +1,14 @@
 <?php
   
-  		session_start(); 
-  		if($_SESSION['model']==''){
-   			header('location:index.php');
-  		}
-  		include('connection.php');
-  		include('classes.php');
-  		include('head.php');
-  		include('header.php');
-  		$adduser = new adduser();
-  
+//include('header.php');
+		
+  	
+  		//include('head.php');
+  		
+  		//$adduser = new adduser();
+  session_start();
+  print_r($_SESSION['email']);
+  echo "hellooo";
 ?>
 
 <div class="container">

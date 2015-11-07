@@ -1,6 +1,5 @@
 <?php
-  include('connection.php');
-  include('classes.php');
+  include('common.php');
   include('header.php');
   include('head.php');
   $adduser = new adduser();
