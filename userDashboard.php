@@ -1,14 +1,12 @@
 <?php
-  include('common.php');
-  include('header.php');
-  include('head.php');
+  include('common2.php');
+  
   $adduser = new adduser();
-  session_start();
-  $email=$_SESSION['user']; 
-  if($_SESSION['user']==''){
+  $email=$_SESSION['email']; 
+  if($_SESSION['email']==''){
    header('location:index.php');
   }
-  $user = $_SESSION['user'];
+  $user = $_SESSION['email'];
   $result = $adduser->userDetail(user,$email);
   $currentchips = $result['availableChips'];
   

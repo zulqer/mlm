@@ -2,9 +2,9 @@
 session_start(); 
 //session_destroy();
 
-/*if(!isset($_SESSION['email'])){
+if(!isset($_SESSION['email'])){
    			header('location:index.php');
-  		}*/
+  		}
 ?>
 <body>
 <header>

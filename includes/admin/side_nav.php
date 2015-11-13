@@ -1,4 +1,4 @@
-<div class="col-md-2 side_nav">
+<div class="col-md-12 side_nav">
       <ul class="sidebar_menu">
 
             <li><a href="#" data-toggle="modal" data-target="#myModal"> Add Chatture  </a></li>

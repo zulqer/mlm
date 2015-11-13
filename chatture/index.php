@@ -3,7 +3,7 @@
 	 include('../common.php');
 	 include('../includes/chatture/head.php');
      include('../includes/chatture/header.php'); 
-	 include('../includes/chatture/side_nav.php'); 
+	  
 	 $adduser = new adduser();
   
   ?>
@@ -39,23 +39,24 @@
          
         </div>
         <div class="modal-body">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 		<input type="text" class="form-control" placeholder="Full Name" name="name" />
 		
 		<input type="text" class="form-control" placeholder="Date of Birth" name="dob"/>
 		<input type="text" class="form-control" placeholder="Age" name="age"/>
 		<input type="text" class="form-control" placeholder="Sex" name="sex"/>
 		<input type="text" class="form-control" placeholder="Interested In" name="interestedIn"/>
-        <input type="password" class="form-control" placeholder="Country" name="country"/>
-        <input type="password" class="form-control" placeholder="Contact Number" name="contact"/>
+        <input type="text" class="form-control" placeholder="Country" name="country"/>
+        <input type="text" class="form-control" placeholder="Contact Number" name="contact"/>
+        <input type="file" class="form-control" placeholder="Upload image" name="image"/>
         
         <input type="text" class="form-control" placeholder="Email Id" name="email"/>
-		<input type="text" class="form-control" placeholder="Password" name="password"/>
+		<input type="password" class="form-control" placeholder="Password" name="password"/>
 		<input type="text" class="form-control" placeholder="Language" name="language"/>
 		<input type="text" class="form-control" placeholder="Body Type" name="bodyType"/>
-        <input type="password" class="form-control" placeholder="Smoking/Drinking yes no" name="smoking"/>
-        <input type="password" class="form-control" placeholder="Body Decoration" name="bodyDecoration"/>
-        <input type="password" class="form-control" placeholder="About tMe" name="aboutMe"/>
+        <input type="text" class="form-control" placeholder="Smoking/Drinking yes no" name="smoking"/>
+        <input type="text" class="form-control" placeholder="Body Decoration" name="bodyDecoration"/>
+        <input type="text" class="form-control" placeholder="About tMe" name="aboutMe"/>
 		
 		  <button type="submit" class="btn btn-default" name="submit" > Submit  </button>
 		</form>
@@ -69,6 +70,18 @@
     </div>
        
   </div>
-    <h1 style="color:#66FF33"><b><em>Welcome Chatture</em></b></h1>
+  
+  <div>
+  	<div class="row">
+    	<div class="col-xs-3">
+        	<?php include('../includes/chatture/side_nav.php'); ?>
+        </div>
+        <div class="col-xs-9">
+          <h1 style="color:#66FF33"><b><em>Welcome Chatture</em></b></h1>
  
+        </div>
+    </div>
+  
+  </div>
+    
  <!-- Add chatture form end -->

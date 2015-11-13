@@ -1,7 +1,7 @@
 <?php
 
-  include('../connection.php');
-  include('../db.inc.php'); 
+  include('connection.php');
+  include('db.inc.php'); 
    class adduser{
    
    
@@ -122,19 +122,10 @@
    ///////////Function for user detail/////////////////
    
         function userDetail($table,$email){
-			$arr = array();
-			$sql = "SELECT * FROM $table where 1 ";
-			
-			if(!empty($email)){
-		     	$sql .=" AND emailid='$email'";
-			}
-			
+			$sql = "SELECT * FROM $table where emailid= '".$email."'";
 			$query=$this->mysqlqueryval($sql);
-	    	
-			while($sqluserdetail=$this->fetcharray($query)){
-				array_push($arr,$sqluserdetail);
-			}
-			return  $arr;	 
+	    	$sqluserdetail=$this->fetcharray($query);
+			return  $sqluserdetail;	 
 		}
    
    
@@ -231,18 +222,12 @@
 	   
 	   /////////////Function for Chatture Details//////////////
 	   
-	   function chattureDetails($table,$username){
-	      $arr = array();   
-         $sql = "SELECT * from $table WHERE 1 ";
-		  if(!empty($username)){
-		     	$sql .=" AND emailid='$username'";
-			}
+	   function chattureDetails($table,$url,$username){
+	   
+        $sql = "SELECT * from $table WHERE emailid='".$username."'";
 		$query=$this->mysqlqueryval($sql);
-	  while ($sqlchhature=$this->fetcharray($query)){
-	      
-		  array_push($arr,$sqlchhature);
-		  }
-		return  $arr;	   
+	    $sqlchhature=$this->fetcharray($query);
+		return  $sqlchhature;	   
 	   
 	  }
 	   
@@ -271,21 +256,7 @@
 		 $email             =     $_POST['email'];
 		 $password          =     md5($_POST['password']);
 		 
-		 					////for image upload////
-							
-							$image=$_FILES["image"]["name"];
- 							$image_t_name=$_FILES["image"]["tmp_name"];
- 							$dir1='../upload/'.$image;
- 							
-							$target_dir = "../upload/";
-							$target_file = $target_dir . $_FILES["image"]["name"];
-							if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-        						//echo "The file ". basename( $_FILES["image_file_upload"]["name"]). " ";
-    						} else {
-        						echo "Sorry, there was an error uploading your file.";
-    						}
-		 
-		  $sqlmodel ="insert into $table set 
+		 $sqlmodel ="insert into $table set 
 							chattureId='$chattureid',
 							name='$name',
 							dob='$dob',
@@ -300,12 +271,9 @@
 							contact='$contact',
 							emailid='$email',
 							password='$password',
-							language='$language',
-							image='$image'
+							language='$language'
 							";
-					
-							
-		                 
+		                   
 						    $result =$this->mysqlqueryval($sqlmodel);
 							
 							if($result)
@@ -343,8 +311,8 @@
 		
 		////////////Function for Models Details////////////
 		
-		function modelDetails($table,$eamil,$chattureid){
-			$arr = array();
+		function modelDetails($table,$email,$chattureid){
+			
 			$sql = "SELECT * from $table WHERE 1 ";
 			if(!empty($email)){
 		     	$sql .=" AND emailid='$email'";
@@ -352,13 +320,10 @@
 			if(!empty($chattureid)){
 		     	$sql .=" AND chattureid='$chattureid'";
 			}
-			
 			$query=$this->mysqlqueryval($sql);
-	    	while($sqlmodel=$this->fetcharray($query)){
-				array_push($arr,$sqlmodel);
-			}
-			 
-		     return $arr;
+	    	$sqlmodel=$this->fetcharray($query);
+			return  $sqlmodel;
+		
 		}
 		
 		///////////////Function for model list//////////////

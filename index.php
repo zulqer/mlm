@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['email'])){
    $user = $_SESSION['email'];
 }
-include('common.php');
+include('classes.php');
 $class = new adduser();
 ?>
 
@@ -55,7 +55,7 @@ $class = new adduser();
 <div class="row">&nbsp;</div>
 <div class="row">
   <div class="large-4 columns left logo_top">
-   <a href="index.html"><img src="images/logo.png"></a>
+   <a href="index.php"><img src="images/logo.png"></a>
   </div>
   <div class="large-8 columns">
       <div class="row collapse">

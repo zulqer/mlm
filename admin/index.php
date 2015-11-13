@@ -2,7 +2,7 @@
  //error_reporting();
  include('../includes/admin/head.php');
  include('../includes/admin/header.php');  
- include('../includes/admin/side_nav.php');
+ //include('../includes/admin/side_nav.php');
   //session_start();
  include('../common.php');
  $adduser = new adduser();
@@ -56,12 +56,13 @@
  
  <!-- Add chatture form end -->
  
- 
- 
- 
- 
- 
-<div class="col-lg-12" style="background:#ececec; box-shadow:0 1px 5px #000000; padding-bottom:50px; margin-top:10px; text-align:center">
+ <div>
+  	<div class="row">
+    	<div class="col-xs-3">
+        	<?php include('../includes/admin/side_nav.php'); ?>
+        </div>
+        <div class="col-lg-9">
+          	<div class="col-lg-12" style="background:#ececec; box-shadow:0 1px 5px #000000; padding-bottom:50px; margin-top:10px; text-align:center">
 
 <div class="col-md-2 box1 btn-primary">
 <h2>Earning </h2>
@@ -101,7 +102,7 @@
 
 <h2> Models </h2>
 <h1><strong><?php echo $total = $adduser->rowCount(models); ?></strong></h1>
-<button type="button" class="btn btn-default">View</button>
+<a href="view_model.php"><button type="button" class="btn btn-default">View</button></a>
 
 </div>
 
@@ -111,7 +112,7 @@
 
 <h2> Chatture </h2>
 <h1><strong><?php echo $total = $adduser->rowCount(chattures); ?></strong></h1>
-<button type="button" class="btn btn-default">view</button>
+<a href="view_chatture.php"><button type="button" class="btn btn-default">view</button></a>
 
 </div>
 
@@ -120,7 +121,7 @@
 
 <h2> User </h2>
 <h1><strong><?php echo $total = $adduser->rowCount(user); ?></strong></h1>
-<button type="button" class="btn btn-default">view</button>
+<a href="view_user.php"><button type="button" class="btn btn-default">view</button></a>
 
 </div>
 
@@ -131,6 +132,18 @@
 </div>
 
  </div>
+
+ 
+        </div>
+    </div>
+  
+  </div>
+
+ 
+ 
+ 
+ 
+
 
 </body>
 </html>

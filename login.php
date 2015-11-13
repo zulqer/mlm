@@ -1,5 +1,5 @@
 <?php
-  include('common.php');
+  include('common2.php');
   $adduser = new adduser();
   
   if(isset($_POST['login'])){
@@ -11,13 +11,13 @@
 			$result=$adduser->login(); 
 			//print_r($result);
 			if($result['success']=='1'){
-		     $_SESSION['email']=$result['email'];
-			 $_SESSION['role']=$result['role'];
+		    $_SESSION['email']=$result['email'];
+		    $_SESSION['role']=$result['role'];
 			
 		//	print_r($result);
-		//	die;
+			//die;
 			if($result['role']=='user'){
-			  header("location:userDashboard.php");
+			  header("location:index.php");
 			}
 			else{
 			

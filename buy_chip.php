@@ -1,13 +1,11 @@
 <?php 
-	session_start();
-	$email = $_SESSION['user'];
-	if($_SESSION['user']==''){
+	include('common2.php');
+	$email = $_SESSION['email'];
+	if($_SESSION['email']==''){
 	  header('location:index.php');
 	}
-	include('classes.php');
-	include('header.php');
-	include('head.php');
 	
+		
 	
      $class = new adduser();
 	 //function call for chip list
